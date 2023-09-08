@@ -1,0 +1,7 @@
+FROM ubuntu
+MAINTAINER nono
+RUN apt update 
+RUN apt install nginx -y
+EXPOSE 80
+ADD static-website-example/ /var/www/html/
+ENTRYPOINT ["/var/sbin/nginx","-g","daemon off;"]
